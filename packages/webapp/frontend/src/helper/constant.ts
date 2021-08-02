@@ -1,0 +1,8 @@
+export const PROFILE_ACTIONS = {
+  UPDATE: "UPDATE",
+  RESET: "RESET",
+};
+export const PATIENTS_ACTIONS = {
+  PUSH_BACK: "PUSH_BACK",
+  REPLACE_BY_INDEX: "REPLACE_BY_INDEX",
+};
