@@ -14,14 +14,6 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-type Patient struct {
-	Name     string `json:"name" bson:"name"`
-	ID       string `json:"id" bson:"id"`
-	KanaName string `json:"kana_name" bson:"kana_name"`
-	Gender   string `json:"gender" bson:"gender"`
-	Birthday string `json:"birthday" bson:"birthday"`
-}
-
 var mh *repo.MongoHandler
 
 func registerRoutes() http.Handler {

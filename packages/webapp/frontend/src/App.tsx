@@ -1,6 +1,4 @@
 import React, { useReducer } from "react";
-// import {I18nextProvider} from "react-i18next";
-// import i18next from "i18next";
 import "./App.css";
 import AppContext from "./context/appContext";
 import { defaultPatients, PatientsReducer } from "./reducers/patients";
@@ -23,8 +21,7 @@ function App() {
       >
         <Language/>
         <div>
-         
-          <Patients />
+         <Patients/>
         </div>
       </AppContext.Provider>
     </div>

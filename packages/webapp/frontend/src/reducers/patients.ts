@@ -39,7 +39,7 @@ export const defaultPatients = {
     {
       name: "tvt5",
       id: "6",
-      kana_name: "tvt-genki",
+      kana_name: "tvt-genkdasdasdsai",
       gender: "male",
       birthday: "2020-01-03",
     },
@@ -86,14 +86,14 @@ export const defaultPatients = {
     {
       name: "tvt5",
       id: "6",
-      kana_name: "tvt-genki",
+      kana_name: "tvt-genkidasdfasfasf",
       gender: "male",
       birthday: "2020-01-03",
     },
     {
       name: "tvt5",
       id: "6",
-      kana_name: "tvt-genki",
+      kana_name: "tvt-genkdasdi",
       gender: "male",
       birthday: "2020-01-03",
     },
@@ -132,7 +132,7 @@ export const defaultPatients = {
       birthday: "2020-01-03",
     },
     {
-      name: "tvt5",
+      name: "tvt5xxxxasd",
       id: "6",
       kana_name: "tvt-genki",
       gender: "male",
@@ -146,7 +146,7 @@ export const defaultPatients = {
       birthday: "2020-01-03",
     },
     {
-      name: "last",
+      name: "lastdalksjdlaklsd",
       id: "6",
       kana_name: "tvt-genki",
       gender: "male",

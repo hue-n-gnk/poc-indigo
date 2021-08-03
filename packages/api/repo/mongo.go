@@ -1,10 +1,10 @@
 package repo
 
 import (
+	model "api/model"
 	"context"
 	"fmt"
 	"log"
-	"poc/indigo/model"
 	"time"
 
 	"go.mongodb.org/mongo-driver/mongo"

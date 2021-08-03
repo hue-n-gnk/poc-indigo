@@ -10,32 +10,35 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import TablePagination from "@material-ui/core/TablePagination";
-import TextField from '@material-ui/core/TextField';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import SearchIcon from '@material-ui/icons/Search';
-import { useTranslation } from 'react-i18next';
+import TextField from "@material-ui/core/TextField";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import SearchIcon from "@material-ui/icons/Search";
+import { useTranslation } from "react-i18next";
 const useStyles = makeStyles({
   table: {
-    maxWidth: 750,
+    maxWidth: "100%",
+  },
+  trData: {
+    fontSize: 18,
   },
 });
 export const Patients = () => {
   const classes = useStyles();
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const [searchValue, setSearchValue] = React.useState('');
+  const [searchValue, setSearchValue] = React.useState("");
   const {
     patients: { patients, showingPatients },
   } = useContext(AppContext);
-  const handleChangePage = (event, newPage) => {
+  const handleChangePage = (e: any, newPage: number) => {
     setPage(newPage);
   };
-  const handleChangeRowsPerPage = (event) => {
+  const handleChangeRowsPerPage = (event: any) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     setSearchValue(event.target.value);
   };
 
@@ -44,32 +47,60 @@ export const Patients = () => {
   return (
     <div>
       <div className="mainPatient">
-      <TextField label={t("search")} value={searchValue} onChange={handleChange} InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <SearchIcon />
-            </InputAdornment>
-          ),
-        }}/>        
+        <TextField
+          label={t("search")}
+          value={searchValue}
+          onChange={handleChange}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
         <br />
       </div>
       <p className="centerPage" style={{ color: "red" }}>
         {t("title")}
       </p>
       <div className="centerPage">
-        <Paper style={{ minWidth: 750 }}>
-          <TableContainer
-            component={Paper}
-            style={{ justifyContent: "center", display: "flex" }}
-          >
+        <Paper style={{ minWidth: "80%" }}>
+          <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell>name</TableCell>
-                  <TableCell align="right">id</TableCell>
-                  <TableCell align="right">kana_name</TableCell>
-                  <TableCell align="right">gender</TableCell>
-                  <TableCell align="right">birthday</TableCell>
+                  <TableCell width="15%" classes={{ root: classes.trData }}>
+                    id
+                  </TableCell>
+                  <TableCell
+                    width="25% "
+                    classes={{ root: classes.trData }}
+                    align="left"
+                  >
+                    name
+                  </TableCell>
+                  <TableCell
+                    width="20%"
+                    classes={{ root: classes.trData }}
+                    align="left"
+                  >
+                    kana_name
+                  </TableCell>
+                  <TableCell
+                    width="20%"
+                    classes={{ root: classes.trData }}
+                    align="left"
+                  >
+                    gender
+                  </TableCell>
+                  <TableCell
+                    width="20%"
+                    classes={{ root: classes.trData }}
+                    align="left"
+                  >
+                    birthday
+                  </TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -77,41 +108,36 @@ export const Patients = () => {
                   patients.length > 0 &&
                   patients
                     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                    .map((ele, idx) => (
-                      <TableRow key={idx}>
+                    .map((ele: any, idx: number) => (
+                      <TableRow key={idx} hover>
                         <TableCell
                           component="th"
                           scope="row"
-                          className="tableCell"
-                          style={{ maxWidth: 10 }}
-                        >
-                          {ele.name}
-                        </TableCell>
-                        <TableCell
-                          align="right"
-                          className="tableCell"
-                          style={{ maxWidth: 10 }}
+                          classes={{ root: classes.trData }}
                         >
                           {ele.id}
                         </TableCell>
                         <TableCell
-                          align="right"
-                          className="tableCell"
-                          style={{ maxWidth: 10 }}
+                          align="left"
+                          classes={{ root: classes.trData }}
+                        >
+                          {ele.name}
+                        </TableCell>
+                        <TableCell
+                          align="left"
+                          classes={{ root: classes.trData }}
                         >
                           {ele.kana_name}
                         </TableCell>
                         <TableCell
-                          align="right"
-                          className="tableCell"
-                          style={{ maxWidth: 10 }}
+                          align="left"
+                          classes={{ root: classes.trData }}
                         >
                           {ele.gender}
                         </TableCell>
                         <TableCell
-                          align="right"
-                          className="tableCell"
-                          style={{ maxWidth: 10 }}
+                          align="left"
+                          classes={{ root: classes.trData }}
                         >
                           {ele.birthday}
                         </TableCell>
@@ -120,7 +146,7 @@ export const Patients = () => {
               </TableBody>
               {emptyRows > 0 && (
                 <TableRow style={{ height: 53 * emptyRows }}>
-                  <TableCell colSpan={6} />
+                  <TableCell colSpan={7}  classes={{ root: classes.trData }}/>
                 </TableRow>
               )}
             </Table>
