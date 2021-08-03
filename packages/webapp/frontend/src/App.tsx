@@ -3,8 +3,7 @@ import "./App.css";
 import AppContext from "./context/appContext";
 import { defaultPatients, PatientsReducer } from "./reducers/patients";
 import { defaultProfile, ProfileReducer } from "./reducers/profile";
-import Profile from "./components/MyProfile";
-import Patients from "./components/Patients";
+import Patients from "./components/Patients/Patients";
 function App() {
   const [patients, dispatchPatients] = useReducer(
     PatientsReducer,
@@ -17,11 +16,10 @@ function App() {
       <AppContext.Provider
         value={{ patients, dispatchPatients, profile, dispatchProfile }}
       >
-      
-        <p>My profile</p>
-        <Profile />
-        <p>List of patients</p>
-        <Patients />
+        <div>
+         
+          <Patients />
+        </div>
       </AppContext.Provider>
     </div>
   );

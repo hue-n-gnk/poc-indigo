@@ -1,0 +1,16 @@
+.mainPatient {
+    justify-content: center;
+    display: flex;
+    margin-top: 5%;
+}
+.centerPage {
+    justify-content: center;
+    display: flex;
+}
+.patientsTable {
+    width: 60%;
+    border-collapse: collapse;
+}
+table.patientsTable td,th {
+    border: 1px solid black;
+}

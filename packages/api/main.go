@@ -38,3 +38,5 @@ func getAllPatient(w http.ResponseWriter, r *http.Request) {
 	contacts := mh.Get(bson.M{})
 	json.NewEncoder(w).Encode(contacts)
 }
+
+
