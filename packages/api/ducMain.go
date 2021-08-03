@@ -16,7 +16,7 @@ const (
 	dbname   = "fhirbase"
 )
 
-func main() {
+func mainx() {
 	var err error
 
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
