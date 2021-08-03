@@ -1,10 +1,10 @@
 package repo
 
 import (
-	model "api/model"
 	"context"
 	"fmt"
 	"log"
+	"poc/indigo/model"
 	"time"
 
 	"go.mongodb.org/mongo-driver/mongo"
@@ -12,6 +12,7 @@ import (
 )
 
 const DefaultDatabase = "patient"
+const PatientCollection = "patient_info"
 
 type MongoHandler struct {
 	client   *mongo.Client
@@ -32,7 +33,7 @@ func NewHandler(address string) *MongoHandler {
 }
 
 func (mh *MongoHandler) Get(filter interface{}) []*model.Patient {
-	collection := mh.client.Database(mh.database).Collection("patient_info")
+	collection := mh.client.Database(mh.database).Collection(PatientCollection)
 	ctx, _ := context.WithTimeout(context.Background(), 5*time.Second)
 
 	cur, err := collection.Find(ctx, filter)

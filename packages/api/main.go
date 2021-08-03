@@ -21,8 +21,8 @@ func registerRoutes() http.Handler {
 	r.Route("/patients", func(r chi.Router) {
 		r.Get("/", getAllPatient)
 	})
-	// r.Route("/all", func(r chi.Router) {
-	// 	r.Get("/", getAllPatient)
+	// r.Route("/byName", func(r chi.Router) {
+	// 	r.Get("/", getByPrefixName)
 	// })
 	return r
 }
@@ -43,10 +43,8 @@ func main() {
 	}
 
 	fmt.Println("Connected to MongoDB!")
-	patientColl := client.Database("patient").Collection("patient_info")
 
 	r := registerRoutes()
-	getByPrefixName(patientColl)
 	fmt.Println("Starting server at 3060")
 	http.ListenAndServe(":3060", r)
 
@@ -57,45 +55,7 @@ func getAllPatient(res http.ResponseWriter, req *http.Request) {
 	json.NewEncoder(res).Encode(contacts)
 }
 
-// func getAll(res http.ResponseWriter, req *http.Request) {
-
-// }
-func getByPrefixName(patientColl *mongo.Collection) {
-	findOptions := options.Find()
-	findOptions.SetLimit(2)
-
-	var results []*Patient
-
-	// Passing bson.D{{}} as the filter matches all documents in the collection
-	cur, err := patientColl.Find(context.TODO(), bson.D{{}}, findOptions)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Print("result")
-	// Finding multiple documents returns a cursor
-	// Iterating through the cursor allows us to decode documents one at a time
-	for cur.Next(context.TODO()) {
-
-		// create a value into which the single document can be decoded
-		var elem Patient
-		err := cur.Decode(&elem)
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		results = append(results, &elem)
-	}
-
-	if err := cur.Err(); err != nil {
-		log.Fatal(err)
-	}
-
-	// Close the cursor once finished
-	cur.Close(context.TODO())
-
-	fmt.Printf("Found multiple documents (array of pointers): %+v\n", results)
-	fmt.Print(results[0])
-	// for results.Next() {
-
-	// }
+func getByPrefixName(res http.ResponseWriter, req *http.Request) {
+	contacts := mh.Get(bson.M{"name": "vmd"})
+	json.NewEncoder(res).Encode(contacts)
 }
