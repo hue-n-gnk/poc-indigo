@@ -9,8 +9,11 @@
 }
 .patientsTable {
     width: 60%;
-    border-collapse: collapse;
 }
-table.patientsTable td,th {
+.tableCell td {
+    max-width: 50px;
+    color: red;
+}
+/* table.patientsTable td,th {
     border: 1px solid black;
-}
+} */
