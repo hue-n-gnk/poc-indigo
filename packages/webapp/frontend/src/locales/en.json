@@ -1,4 +1,7 @@
 {
     "search" : "Search",
-    "title": "List of patients"
+    "title": "List of patients",
+    "addPatient": "Add",
+    "addPatientDialog" : "Create patient",
+    "submit": "Submit"
 }

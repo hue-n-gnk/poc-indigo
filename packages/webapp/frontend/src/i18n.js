@@ -6,10 +6,10 @@ import enTrans from "./locales/en.json";
 import viTrans from "./locales/vi.json";
 // the translations
 const resources = {
-  english: {
+  English: {
     translation: enTrans,
   },
-  vietnamese: {
+  Japanese: {
     translation: viTrans,
   },
 };

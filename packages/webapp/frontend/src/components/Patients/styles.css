@@ -1,18 +1,37 @@
 .mainPatient {
-    justify-content: center;
-    display: flex;
-    margin-top: 5%;
+  justify-content: center;
+  display: flex;
+  margin: 2% 20% 0 20%;
+  flex-direction: column;
 }
 .centerPage {
-    justify-content: center;
-    display: flex;
+  justify-content: center;
+  display: flex;
 }
 .patientsTable {
-    width: 60%;
+  width: 60%;
 }
 .tableCell td {
-    max-width: 50px;
-    color: red;
+  max-width: 50px;
+  color: red;
+}
+.button {
+  width: 100px;
+  height: 32px;
+  background: #0277bd;
+  color: white;
+}
+.eleActions {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.inputBase input {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-top: 5px;
 }
 /* table.patientsTable td,th {
     border: 1px solid black;

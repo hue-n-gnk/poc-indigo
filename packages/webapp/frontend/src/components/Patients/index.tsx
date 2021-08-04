@@ -1,7 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./styles.css";
 import AppContext from "../../context/appContext";
-import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -10,27 +9,30 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import TablePagination from "@material-ui/core/TablePagination";
-import TextField from "@material-ui/core/TextField";
-import InputAdornment from "@material-ui/core/InputAdornment";
-import SearchIcon from "@material-ui/icons/Search";
 import { useTranslation } from "react-i18next";
+import Button from "@material-ui/core/Button";
+import InputBase from "@material-ui/core/InputBase";
+import InputLabel from "@material-ui/core/InputLabel";
+import AddPatient from "../Dialog/AddPatient";
+import { makeStyles } from '@material-ui/styles';
 const useStyles = makeStyles({
-  table: {
-    maxWidth: "100%",
-  },
-  trData: {
-    fontSize: 18,
-  },
+  trData : {
+    fontSize: 20
+  }
 });
 export const Patients = () => {
   const classes = useStyles();
   const { t } = useTranslation();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [isOpenAddPatient, setIsOpenAddPatient] = useState(false);
   const [searchValue, setSearchValue] = React.useState("");
   const {
     patients: { patients, showingPatients },
   } = useContext(AppContext);
+  const handleCloseAddPatientDialog = () => {
+    setIsOpenAddPatient(false);
+  };
   const handleChangePage = (e: any, newPage: number) => {
     setPage(newPage);
   };
@@ -45,29 +47,27 @@ export const Patients = () => {
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, patients.length - page * rowsPerPage);
   return (
-    <div>
-      <div className="mainPatient">
-        <TextField
-          label={t("search")}
-          value={searchValue}
-          onChange={handleChange}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon />
-              </InputAdornment>
-            ),
-          }}
-        />
+    <div className="mainPatient">
+      <div className="eleActions">
+        <form>
+          <InputLabel>{t("search")}</InputLabel>
+          <InputBase className="inputBase" onChange={handleChange} />
+        </form>
+        <Button
+          color="primary"
+          variant="contained"
+          className="button"
+          onClick={() => setIsOpenAddPatient(true)}
+        >
+          {t("addPatient")}
+        </Button>
         <br />
       </div>
-      <p className="centerPage" style={{ color: "red" }}>
-        {t("title")}
-      </p>
-      <div className="centerPage">
-        <Paper style={{ minWidth: "80%" }}>
+
+      <div>
+        <Paper>
           <TableContainer component={Paper}>
-            <Table className={classes.table} aria-label="simple table">
+            <Table aria-label="simple table">
               <TableHead>
                 <TableRow>
                   <TableCell width="15%" classes={{ root: classes.trData }}>
@@ -146,7 +146,7 @@ export const Patients = () => {
               </TableBody>
               {emptyRows > 0 && (
                 <TableRow style={{ height: 53 * emptyRows }}>
-                  <TableCell colSpan={7}  classes={{ root: classes.trData }}/>
+                  <TableCell colSpan={7} classes={{ root: classes.trData }} />
                 </TableRow>
               )}
             </Table>
@@ -159,11 +159,14 @@ export const Patients = () => {
             page={page}
             onPageChange={handleChangePage}
             onRowsPerPageChange={handleChangeRowsPerPage}
-            className={classes.table}
           />
         </Paper>
       </div>
       {/* <Pagination /> */}
+      <AddPatient
+        isOpen={isOpenAddPatient}
+        handleClose={handleCloseAddPatientDialog}
+      />
     </div>
   );
 };

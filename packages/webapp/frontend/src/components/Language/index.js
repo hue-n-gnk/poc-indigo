@@ -3,10 +3,9 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import i18n from "../../i18n";
 export const Language = () => {
-    const [lang, setLang] = React.useState('english');
+    const [lang, setLang] = React.useState('English');
     const handleChange = (event) => {
         setLang(event.target.value);
-       
     };
     useEffect(() => {
       if(lang) {
@@ -21,8 +20,8 @@ export const Language = () => {
           onChange={handleChange}
           style={{margin: "1% 0 0 10%"}}
         >
-          <MenuItem value={"english"}>english</MenuItem>
-          <MenuItem value={"vietnamese"}>vietnames</MenuItem>
+          <MenuItem value={"English"}>English</MenuItem>
+          <MenuItem value={"Japanese"}>Japanese</MenuItem>
     
         </Select>
     )

@@ -1,0 +1,57 @@
+.formHeader {
+  background-color: #616161;
+  text-align: center;
+  color: white;
+  position: relative;
+  padding: 10px;
+}
+.main {
+  width: 600px;
+  height: 500px;
+}
+.input-base input {
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 300px;
+  font-weight: normal;
+  padding-left: 10px;
+}
+.title-base div {
+  min-width: 130px;
+  font-weight: 700;
+}
+.field-input {
+  display: flex;
+  align-items: center;
+  height: 90px;
+}
+.main-form {
+  margin-left: 15px;
+}
+.birthday {
+  max-width: 100px;
+  min-width: none;
+}
+.birthday div {
+  height: 40px;
+  min-width: auto;
+}
+.birthday input {
+  border: none;
+  width: 102px;
+}
+.button-bottom {
+  position: absolute !important;
+  right: 20px !important;
+  bottom: 15px !important;
+}
+.gender-select {
+  max-height: 37px;
+}
+.gender-select select {
+  font-weight: normal;
+  width: 117px;
+}
+.gender-select option {
+  height: 10px;
+}

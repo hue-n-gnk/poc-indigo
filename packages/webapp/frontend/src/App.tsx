@@ -3,9 +3,19 @@ import "./App.css";
 import AppContext from "./context/appContext";
 import { defaultPatients, PatientsReducer } from "./reducers/patients";
 import { defaultProfile, ProfileReducer } from "./reducers/profile";
-import Patients from "./components/Patients/Patients";
+import Patients from "./components/Patients";
 import Language from "./components/Language"
-
+import {  ThemeProvider,createTheme } from '@material-ui/core/styles';
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#0277bd"
+    },
+    secondary: {
+      main: "#0277bd"
+    },
+  },
+});
 function App() {
   const [patients, dispatchPatients] = useReducer(
     PatientsReducer,
@@ -15,7 +25,7 @@ function App() {
 
   return (
     <div className="App">
-
+      <ThemeProvider theme={theme}>
       <AppContext.Provider
         value={{ patients, dispatchPatients, profile, dispatchProfile }}
       >
@@ -24,6 +34,7 @@ function App() {
          <Patients/>
         </div>
       </AppContext.Provider>
+      </ThemeProvider>
     </div>
   );
 }
