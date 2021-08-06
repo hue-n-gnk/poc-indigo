@@ -7,13 +7,15 @@ export const defaultPatients = {
       kana_name: "vmd-genki",
       gender: "male",
       birthday: "2020-01-02",
+      email:"vmd@genkisystem.com"
     },
     {
       name: "tvt1",
       id: "2",
       kana_name: "tvt-genki",
-      gender: "male",
+      gender: "female",
       birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
     },
     {
       name: "tvt2",
@@ -21,6 +23,7 @@ export const defaultPatients = {
       kana_name: "tvt-genki",
       gender: "male",
       birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
     },
     {
       name: "tvt3",
@@ -28,6 +31,7 @@ export const defaultPatients = {
       kana_name: "tvt-genki",
       gender: "male",
       birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
     },
     {
       name: "tvt4",
@@ -35,6 +39,7 @@ export const defaultPatients = {
       kana_name: "tvt-genki",
       gender: "male",
       birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
     },
     {
       name: "tvt5",
@@ -42,6 +47,7 @@ export const defaultPatients = {
       kana_name: "tvt-genkdasdasdsai",
       gender: "male",
       birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
     },
     {
       name: "tvt5",
@@ -49,18 +55,7 @@ export const defaultPatients = {
       kana_name: "tvt-genki",
       gender: "male",
       birthday: "2020-01-03",
-    }, {
-      name: "tvt5",
-      id: "6",
-      kana_name: "tvt-genki",
-      gender: "male",
-      birthday: "2020-01-03",
-    }, {
-      name: "tvt5",
-      id: "6",
-      kana_name: "tvt-genki",
-      gender: "male",
-      birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
     },
     {
       name: "tvt5",
@@ -68,6 +63,7 @@ export const defaultPatients = {
       kana_name: "tvt-genki",
       gender: "male",
       birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
     },
     {
       name: "tvt5",
@@ -75,6 +71,7 @@ export const defaultPatients = {
       kana_name: "tvt-genki",
       gender: "male",
       birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
     },
     {
       name: "tvt5",
@@ -82,6 +79,23 @@ export const defaultPatients = {
       kana_name: "tvt-genki",
       gender: "male",
       birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
+    },
+    {
+      name: "tvt5",
+      id: "6",
+      kana_name: "tvt-genki",
+      gender: "male",
+      birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
+    },
+    {
+      name: "tvt5",
+      id: "6",
+      kana_name: "tvt-genki",
+      gender: "male",
+      birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
     },
     {
       name: "tvt5",
@@ -89,6 +103,7 @@ export const defaultPatients = {
       kana_name: "tvt-genkidasdfasfasf",
       gender: "male",
       birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
     },
     {
       name: "tvt5",
@@ -96,6 +111,7 @@ export const defaultPatients = {
       kana_name: "tvt-genkdasdi",
       gender: "male",
       birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
     },
     {
       name: "tvt5",
@@ -103,6 +119,7 @@ export const defaultPatients = {
       kana_name: "tvt-genki",
       gender: "male",
       birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
     },
     {
       name: "number4",
@@ -110,12 +127,7 @@ export const defaultPatients = {
       kana_name: "tvt-genki",
       gender: "male",
       birthday: "2020-01-03",
-    }, {
-      name: "tvt5",
-      id: "6",
-      kana_name: "tvt-genki",
-      gender: "male",
-      birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
     },
     {
       name: "tvt5",
@@ -123,6 +135,7 @@ export const defaultPatients = {
       kana_name: "tvt-genki",
       gender: "male",
       birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
     },
     {
       name: "tvt5",
@@ -130,6 +143,15 @@ export const defaultPatients = {
       kana_name: "tvt-genki",
       gender: "male",
       birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
+    },
+    {
+      name: "tvt5",
+      id: "6",
+      kana_name: "tvt-genki",
+      gender: "male",
+      birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
     },
     {
       name: "tvt5xxxxasd",
@@ -137,6 +159,7 @@ export const defaultPatients = {
       kana_name: "tvt-genki",
       gender: "male",
       birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
     },
     {
       name: "tvt5",
@@ -144,6 +167,7 @@ export const defaultPatients = {
       kana_name: "tvt-genki",
       gender: "male",
       birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
     },
     {
       name: "lastdalksjdlaklsd",
@@ -151,10 +175,13 @@ export const defaultPatients = {
       kana_name: "tvt-genki",
       gender: "male",
       birthday: "2020-01-03",
+      email:"vmd@genkisystem.com"
     },
   ],
   showingPatients: [],
+  patientsResource: [],
 };
+
 export const PatientsReducer = (state: any, action: any) => {
   switch (action.type) {
     case PAA.PUSH_BACK: {
@@ -164,17 +191,28 @@ export const PatientsReducer = (state: any, action: any) => {
       };
     }
     case PAA.REPLACE_BY_INDEX: {
-      const copyPatients = { ...state.patients };
-      copyPatients[action.data.index] = action.data.patient;
+      const copyPatients = [...state.patientsResource];
+      const temp = copyPatients[action.data.index];
+      temp.name[0].text = action.data.patient.name;
+      temp.active = action.data.patient.active;
+      temp.gender = action.data.patient.gender;
+      temp.birthDate = action.data.patient.birthDate;
+      copyPatients[action.data.index] = temp;
       return {
         ...state,
-        patients: copyPatients,
+        patientsResource: copyPatients,
       };
     }
     case PAA.SET_SHOWING_PATIENTS: {
       return {
         ...state,
         showingPatients: action.data.patients,
+      };
+    }
+    case PAA.INIT_RESOURCES: {
+      return {
+        ...state,
+        patientsResource: action.data.patientsResource,
       };
     }
     default:

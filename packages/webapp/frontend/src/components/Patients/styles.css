@@ -1,7 +1,7 @@
 .mainPatient {
   justify-content: center;
   display: flex;
-  margin: 2% 20% 0 20%;
+  margin: 2% 5% 0 5%;
   flex-direction: column;
 }
 .centerPage {
@@ -9,7 +9,7 @@
   display: flex;
 }
 .patientsTable {
-  width: 60%;
+  width: 100%;
 }
 .tableCell td {
   max-width: 50px;

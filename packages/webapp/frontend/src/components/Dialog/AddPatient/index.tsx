@@ -27,12 +27,6 @@ export const AddPatient = ({
   const onSubmit = (e: any) => {
     e.preventDefault();
     handleClose();
-    // console.log(value);
-    // const input = {
-    //   name: e.target.name.value,
-    //   kana_name: e.target.kana_name.value,
-    //   gender: gender,
-    // };
   };
 
   return (
@@ -94,7 +88,7 @@ export const AddPatient = ({
               color="primary"
               variant="contained"
             >
-              {t("submit")}
+              {t("register")}
             </Button>
           </form>
         </div>

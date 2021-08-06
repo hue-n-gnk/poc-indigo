@@ -2,6 +2,10 @@
   "search": "探す",
   "title": "Danh sách bệnh nhân",
   "addPatient": "新規作成",
-  "addPatientDialog": "基本情報 編集",
-  "submit":"送信"
+  "addPatientDialog": "基本情報 登録",
+  "editPatientDialog": "基本情報 編集",
+  "edit":"送信",
+  "register": "登録",
+  "resource" : "資源"
+
 }

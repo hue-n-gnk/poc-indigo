@@ -3,5 +3,8 @@
     "title": "List of patients",
     "addPatient": "Add",
     "addPatientDialog" : "Create patient",
-    "submit": "Submit"
+    "editPatientDialog": "Edit patient",
+    "Edit": "Edit",
+    "register": "Register",
+    "resource": "Resource"
 }
